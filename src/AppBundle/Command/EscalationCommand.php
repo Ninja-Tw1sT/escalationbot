@@ -10,7 +10,7 @@ use Symfony\Component\Console\Input\InputOption;
 
 use AppBundle\Utility\ZendeskApi;
 
-class ExampleCommand extends ContainerAwareCommand {
+class EscalationCommand extends ContainerAwareCommand {
   protected function configure() {
     $this->setName('app:example');
   }
