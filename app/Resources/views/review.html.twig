@@ -1,0 +1,16 @@
+<body>
+  <table>
+    <tr>
+      <th>Ticket Number</th>
+      <th>Assignee</th>
+      <th>Subject</th>
+    </tr>
+
+    <tr>
+      <td><a href="https://dattoinc.zendesk.com/agent/tickets/{{ twigData.ticket_id }}">{{ twigData.ticket_id }}</a></td>
+      <td>{{ twigData.name }}</td>
+      <td>{{ twigData.subject }}</td>
+    </tr>
+
+  </table>
+</body>

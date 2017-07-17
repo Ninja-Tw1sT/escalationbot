@@ -1,0 +1,7 @@
+review:
+    path:     /review
+    defaults: { _controller: AppBundle:Review:review }
+
+reviewFrontEnd:
+    path:     /reviewFrontEnd
+    defaults: { _controller: AppBundle:Review:reviewFrontEnd }
