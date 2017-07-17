@@ -10,9 +10,9 @@ use AppBundle\Utility\ZendeskApi;
 
 use Exception;
 
-class ReviewController extends Controller {
+class EscalationController extends Controller {
 
-  public function reviewAction() {
+  public function escalationAction() {
 
     $user = $this->container->getParameter('api_user');
     $pass = $this->container->getParameter('api_pass');
@@ -29,7 +29,7 @@ class ReviewController extends Controller {
     return $response;
   }
 
-  public function reviewFrontEndAction() {
+  public function escalationFrontEndAction() {
     $zendesk = $this->get('api.zendesk');
     $viewID = 56695823;
 
@@ -54,6 +54,6 @@ class ReviewController extends Controller {
     $twigData["name"] = $userData["user"]["name"];
 
 
-    return $this->render('review.html.twig', array("twigData" => $twigData));
+    return $this->render('escalation.html.twig', array("twigData" => $twigData));
   }
 }

@@ -2,8 +2,6 @@
 
 namespace AppBundle\Utility;
 
-require_once('Credentials.php');
-
 class ZendeskApi {
 
   public function __construct($user, $pass) {

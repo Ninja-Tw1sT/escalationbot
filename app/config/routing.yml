@@ -1,7 +1,7 @@
-review:
-    path:     /review
-    defaults: { _controller: AppBundle:Review:review }
+Escalation:
+    path:     /escalation
+    defaults: { _controller: AppBundle:Escalation:escalation }
 
-reviewFrontEnd:
-    path:     /reviewFrontEnd
-    defaults: { _controller: AppBundle:Review:reviewFrontEnd }
+EscalationFrontEnd:
+    path:     /escalationFrontEnd
+    defaults: { _controller: AppBundle:Escalation:escalationFrontEnd }
