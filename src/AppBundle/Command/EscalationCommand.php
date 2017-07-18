@@ -17,11 +17,14 @@ class EscalationCommand extends ContainerAwareCommand {
 
   protected function execute(InputInterface $input, OutputInterface $output) {
 
+    // Instantiate Service Container
     $container = $this->getContainer();
+
+    // Create ZendeskApi object
     $zendesk = $container->get('api.zendesk');
-    $viewID = 56695823;
 
     // Get ticket information
+    $viewID = 56695823;
     $ticketData = $zendesk->zendeskApiCall('GET', "/api/v2/views/".$viewID."/execute.json");
     $ticketDataRows = $ticketData["rows"][0];
     $ticketID = $ticketDataRows['ticket_id'];
@@ -32,6 +35,10 @@ class EscalationCommand extends ContainerAwareCommand {
     $assigneeData = $zendesk->zendeskApiCall('GET', "/api/v2/users/".$assigneeID.".json");
     $assigneeName = $assigneeData["user"]["name"];
 
+    // Create SlackApi object
+    $slack = $container->get('api.slack');
+
+    // Create messaging and output
     $message = $assigneeName . ' has received an escalation for https://dattoinc.zendesk.com/agent/tickets/' . $ticketID . "\nSubject: " . $subject;
     $output->writeln($message);
   }

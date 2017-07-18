@@ -5,7 +5,13 @@ parameters:
 
 services:
     api.zendesk:
-      class: AppBundle\Utility\ZendeskApi
-      arguments:
-        - '%api_user%'
-        - '%api_pass%'
+        class: AppBundle\Utility\ZendeskApi
+        arguments:
+            - '%zendesk.api_user%'
+            - '%zendesk.api_pass%'
+    api.slack:
+        class: AppBundle\Utility\SlackApi
+        arguments:
+            - '%slack.api_token%'
+            - '%slack.api_username%'
+            - '%slack.api_icon_emoji%'
